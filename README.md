@@ -1,4 +1,4 @@
-# Subclip 0.0.2
+# Subtext 0.0.2
 A package to make NLP fast and easy for beginners.
 
 - Efficient text prediction 
@@ -11,21 +11,20 @@ I still have a lot of plans for this package, for that reason, there would be a 
 
 ## Install
 ```
-pip install subclip
+pip install subtext
 ```
 
 # Usage
 First import the program using:
 ```python
-import subclip
+import subtext
 ```
-
 ## Predict
 A function that predicts the next x number of words based on the given string and phrase
 ### Parameters
 The function's parameters are:
 ```python
-predict(string, phrase, n=0, case_insensitive=False)
+subtext.predict(string, phrase, n=0, case_insensitive=False)
 ```
 * **String**: Main text
 * **Phrase**: The key phrase (prompt). The function would try to predict what would come after the given phrase.
@@ -57,7 +56,7 @@ This function splits a string into pairs of strings.
 
 ### Parameters
 ```python
-pair(string, n)
+subtext.pair(string, n)
 ```
 - **string** is the string you're trying to split into pairs
 - **n** stands for the number of strings in each pair. (Equivalent to that of the ```n``` value in n-gram)
@@ -79,7 +78,7 @@ Which outputs
 
 ## Identify Syllables
 ```python
-subclip.syllables("carbonmonoxide")
+subtext.syllables("carbonmonoxide")
 ```
 This outputs:
 ```python
@@ -91,7 +90,7 @@ But take note that this only works with lowercase strings.
 ### Parameters
 The function's parameters are:
 ```python
-countwords(string, case_insensitive=False)
+subtext.countwords(string, case_insensitive=False)
 ```
 Change that to ```True```  if you want it to be case-insensitive.
 
@@ -103,7 +102,7 @@ string = "Sometimes I wonder, 'Am I stupid?' then I realize, yeah. yeah, I am st
 
 Then put it in the function:
 ```python
-x = subclip.countwords(string)
+x = subtext.countwords(string)
 print(x)
 ```
 It should print:
