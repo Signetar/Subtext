@@ -1,4 +1,7 @@
 # Subtext 0.0.2
+[![Downloads](https://pepy.tech/badge/subtext)](https://pepy.tech/project/subtext)
+[![PyPI version](https://badge.fury.io/py/Subtext.svg)](https://badge.fury.io/py/Subtext)
+
 A package to make NLP fast and easy for beginners.
 
 - Efficient text prediction 
