@@ -1,6 +1,7 @@
 # Subtext 2 
 [![Downloads](https://pepy.tech/badge/subtext)](https://pepy.tech/project/subtext)
 [![PyPI version](https://badge.fury.io/py/Subtext.svg)](https://badge.fury.io/py/Subtext)
+
 A package for Natural Language Processing (NLP). This includes minor functions for processing text, as well as machine learning algorithms to perform an in-depth analysis.
 
 Subtext 2 introduces more advanced tools for analysis. As the package is now focused on deployment of such tools, previous functions will now be under *miscellaneous* section.
