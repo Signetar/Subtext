@@ -1,27 +1,88 @@
-# Subtext 0.0.2
+# Subtext 2 
 [![Downloads](https://pepy.tech/badge/subtext)](https://pepy.tech/project/subtext)
 [![PyPI version](https://badge.fury.io/py/Subtext.svg)](https://badge.fury.io/py/Subtext)
+A package for Natural Language Processing (NLP). This includes minor functions for processing text, as well as machine learning algorithms to perform an in-depth analysis.
 
-A package to make NLP fast and easy for beginners.
+Subtext 2 introduces more advanced tools for analysis. As the package is now focused on deployment of such tools, previous functions will now be under *miscellaneous* section.
 
-- Efficient text prediction 
-- Text pairing, equivalent to that of **NLTK**'s n-gram.
-- Syllable Identification
-- Find frequencies of words in given text
-- Find matching words in two arrays
-
-I still have a lot of plans for this package, for that reason, there would be a lot of frequent updates in the near future. The updates would include optimizations & more functions, so stay tuned.
+As of now, my development plan is in shambles and the only "advanced" algorithm you can currently access is `SentimentAnalyser`. But the analyser is quite good so I hope you can forgive me for that.
 
 ## Install
+You can install this package through PyPi,
 ```
 pip install subtext
 ```
+or, if you were nice enough to have this installed on your device already, you can upgrade the package using
+```
+pip install --upgrade subtext
+```
 
-# Usage
-First import the program using:
-```python
+and import using
+```py
 import subtext
 ```
+## Sentiment Analyser
+### Overview
+The SentimentAnalyser class is designed to perform sentiment analysis on text data using n-grams. It allows users to input sentences with their respective sentiment scores, calculate average scores for each n-gram, and analyze the sentiment of new sentences based on the stored n-grams.
+### Class methods
+- __init__(self):
+Initializes the SentimentAnalyser object.
+- __generate_ngrams__(self, sentence, n):
+Generates n-grams from a given sentence.
+- __add_sentences__(self, sentences, scores, n_grams=1):
+Adds a list of sentences and their respective sentiment scores to the analyser.
+- __calculate_average_scores__(self):
+Calculates the average sentiment scores for each n-gram in the analyser.
+- __analyse__(self, sentence, n_grams=1, detailed_view=False):
+Analyzes the sentiment of a given sentence based on the stored n-grams. Once detailed_view is enabled, the user can see the workings behind the analysis.
+
+### Example Usage
+```py
+from subtext import SentimentAnalyser
+
+analyser = SentimentAnalyser()
+
+# Add sentences and their respective scores
+sentences = ["I love this movie.", "I hate this movie."]
+scores = [0.8, -0.8]
+analyser.add_sentences(sentences, scores, n_grams=2)
+
+# Analyze the sentiment of a sentence
+sentence = "I love this movie, but I hate the ending."
+sentiment_score = analyser.analyse(sentence, n_grams=2)
+print(sentiment_score)
+
+# Analyze the sentiment of a sentence with detailed_view
+sentiment_score_detailed = analyser.analyse(sentence, n_grams=2, detailed_view=True)
+print(sentiment_score_detailed)
+```
+
+## n_grams(self, sentence, n)
+Generates n-grams from a given sentence.
+
+Parameters:
+- sentence (str): The input sentence.
+- n (int): The length of the n-grams to generate.
+
+Returns:
+A list of n-grams (list of lists of strings).
+### Example Usage
+```py
+from subtext import n_grams
+
+# Generate n-grams from a sentence
+sentence = "I love this movie."
+ngrams = n_grams(sentence, 2) # this would make bigrams
+print(ngrams)
+```
+Output:
+```py
+[['I', 'love'], ['love', 'this'], ['this', 'movie.']]
+```
+
+# Subtext 1
+These are misc functions that were developed during initial release of Subtext.
+
 ## Predict
 A function that predicts the next x number of words based on the given string and phrase
 ### Parameters
@@ -53,30 +114,6 @@ print(predict(string, "I am", n=2))
 It would output
 ```
 {'a string.': 2, 'also a': 1}
-```
-## Pair
-This function splits a string into pairs of strings.
-
-### Parameters
-```python
-subtext.pair(string, n)
-```
-- **string** is the string you're trying to split into pairs
-- **n** stands for the number of strings in each pair. (Equivalent to that of the ```n``` value in n-gram)
-
-### Usage
-Let's set our string to:
-```python
-string="Sometimes, I just go out and eat sand. I don't know why"
-``` 
-Don't ask.
-Let's turn this into pairs of 2:
-```python
-print(pair(string, 2))
-```
-Which outputs
-```
-[['Sometimes,', 'I'], ['I', 'just'], ['just', 'go'], ['go', 'out'], ['out', 'and'], ['and', 'eat'], ['eat', 'sand.'], ['sand.', 'I'], ['I', "don't"], ["don't", 'know'], ['know', 'why']]
 ```
 
 ## Identify Syllables
