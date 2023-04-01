@@ -6,6 +6,14 @@ A package for Natural Language Processing (NLP). This includes minor functions f
 
 Subtext 2 introduces more advanced tools for analysis. As the package is now focused on deployment of such tools, previous functions will now be under *miscellaneous* section.
 
+### Development plans
+- `SentimentAnalyser` (released in 2.0)
+- `TextModifier` (in development)
+- `ContextExtractor` (in development)
+- `TextClassifier` (in development)
+
+
+
 As of now, my development plan is in shambles and the only "advanced" algorithm you can currently access is `SentimentAnalyser`. But the analyser is quite good so I hope you can forgive me for that. (92% on IMDb Reviews dataset. That's better than some DNN models!)
 
 ## Install
