@@ -11,6 +11,8 @@ Subtext 2 introduces more advanced tools for analysis. As the package is now foc
 - `TextModifier` (in development)
 - `ContextExtractor` (in development)
 - `TextClassifier` (in development)
+- 'TextFiller` (in development)
+- `TextGenerator` (in development)
 
 
 
